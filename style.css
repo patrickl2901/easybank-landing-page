@@ -1,0 +1,532 @@
+:root {
+  /* primary */
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+
+  /* neutral */
+
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  font-family: "Public Sans", sans-serif;
+  font-size: 18px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+p {
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+article {
+  width: 85vw;
+}
+
+#header {
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  height: 3rem;
+}
+
+#header img {
+  padding: 1.2rem;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.request-invite-btn-header {
+  display: none;
+}
+
+.mobile-menu-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	justify-content: space-between;
+	background: transparent;
+  border: 0;
+  height: 0.7rem;
+  padding: 0 1.2rem;
+}
+
+.mobile-menu-open:hover {
+  cursor: pointer;
+}
+
+.mobile-menu-btn:hover {
+  cursor: pointer;
+}
+
+.top, .mid, .bottom {
+  display: block;
+  width: 1.5rem;
+	height: 1px;
+  background-color: black;
+  transition: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 30%;
+  }
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+  background-color: black;
+  opacity: 30%;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 0;
+  top: 0;
+}
+
+@keyframes moveFromTop {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.mobile-menu {
+  background-color: var(--white);
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 85vw;
+  height: 15rem;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px #2f2f2f;
+  animation: moveFromTop 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.mobile-menu .mobile-menu-btn {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.hero-intro {
+  position: relative;
+  height: 100vw;
+  z-index: -2;
+  grid-column-start: 2;
+}
+
+.bg-intro-desktop {
+  display: none;
+}
+
+.bg-intro-mobile {
+  position: relative;
+  width: 100vw;
+  z-index: -3;
+}
+
+.easybank-mockups {
+  width: 100vw;
+  position: absolute;
+  top: -25%;
+  z-index: -2;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column-start: 1;
+}
+
+.hero-text h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  text-align: center;
+  color: var(--grayish-blue);
+}
+
+.request-invite-btn {
+  border: 0;
+  padding: 0.8rem 2rem;
+  border-radius: 8rem;
+  color: var(--white);
+  font-family: "Public Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(90deg, var(--lime-green), var(--bright-cyan));
+}
+
+.request-invite-btn:hover {
+  cursor: pointer;
+  filter: grayscale(50%) brightness(120%);
+}
+
+.why-easybank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--very-light-gray);
+  width: 100vw;
+}
+
+.why-easybank-text {
+  margin: 5rem 0;
+}
+
+.why-easybank article {
+  text-align: center;
+}
+
+.why-easybank img {
+  margin-bottom: 1rem;
+}
+
+.why-easybank p {
+  color: var(--grayish-blue);
+}
+
+.why-easybank h2 {
+  font-weight: 400;
+} 
+
+.feature h2 {
+  margin-bottom: 1rem;
+}
+
+.latest-articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.latest-articles > h1 {
+  margin: 5rem 0 2rem;
+}
+
+.articles-entry {
+  width: 80vw;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.articles-entry img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.articles-entry-text {
+  padding: 1rem;
+}
+
+.articles-entry-text h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  transition: 0.3s;
+}
+
+.articles-entry-text h2:hover {
+  cursor: pointer;
+  color: var(--bright-cyan);
+}
+
+.articles-entry-text p {
+  font-size: 0.8rem;
+  color: var(--grayish-blue);
+}
+
+.articles-entry-text .article-author {
+  font-size: 0.6rem;
+  margin: 0.5rem 0 0 0;
+}
+
+#footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.easybank-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socials-icons {
+  margin: 1.5rem 0;
+  letter-spacing: 0.5rem;
+}
+
+.socials-icons svg {
+  width: 30px;
+  height: auto;
+}
+
+.socials-icons svg:hover {
+  cursor: pointer;
+}
+
+.socials-icons svg path {
+  transition: 0.3s ease-out;
+}
+
+.socials-icons svg:hover path {
+  fill: var(--bright-cyan);
+}
+
+.footer-nav-left, .footer-nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav-left a, .footer-nav-right a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.footer-nav-left a:hover, .footer-nav-right a:hover {
+  color: var(--bright-cyan);
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.copyright p {
+  margin-bottom: 0.5rem;
+  color: var(--grayish-blue);
+}
+
+.copyright .request-invite-btn {
+  margin-bottom: 1rem;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 961px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  #header {
+    height: 4rem;
+    justify-content: space-evenly;
+  }
+
+  .mobile-menu-open {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    height: 100%;
+  }
+
+  .desktop-nav div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.1s ease;
+  }
+  
+  .desktop-nav div:hover {
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, var(--lime-green), var(--bright-cyan)) 20;
+  }
+
+  .desktop-nav a {
+    text-decoration: none;
+    height: 100%;
+    padding: 1.2rem 0.5rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--grayish-blue);
+    transition: 0.2s ease-in-out;
+  }
+
+  .desktop-nav a:hover {
+    color: black;
+  }
+
+  .request-invite-btn-header {
+    display: block;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25vh;
+    column-gap: 5rem;
+    padding: 0 5rem;
+  }
+
+  .hero-intro {
+    height: 30vw;
+    z-index: -2;
+  }
+
+  .bg-intro-mobile {
+    display: none;
+  }
+
+  .bg-intro-desktop {
+    display: block;
+    position: absolute;
+    max-height: 100vw;
+    z-index: -3;
+  }
+
+  .easybank-mockups {
+    width: 50vw;
+    position: absolute;
+    top: -25%;
+    z-index: -2;
+  }
+
+  .hero-text {
+    max-width: 30vw;
+    align-items: flex-start;
+  }
+
+  .hero-text h1 {
+    text-align: left;
+  }
+
+  .hero-text p {
+    text-align: left;
+  }
+
+  .why-easybank {
+    position: relative;
+    z-index: -2;
+  }
+
+  .why-easybank article {
+    text-align: left;
+  }
+
+  .why-easybank-text {
+    text-align: left;
+  }
+
+  .easybank-features {
+    display: flex;
+  }
+
+  .feature {
+    max-width: 20vw;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .latest-articles h1 {
+    align-self: flex-start;
+    padding-left: 6rem;
+  }
+
+  .articles-container {
+    display: flex;
+  }
+
+  .articles-entry {
+    max-width: 20vw;
+    padding: 0 1rem;
+  }
+
+  #footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .easybank-socials {
+    align-items: start;
+  }
+
+  .socials-icons {
+    padding-top: 2rem;
+  }
+
+  .footer-nav-left, .footer-nav-right {
+    align-items: start;
+  }
+
+  .footer-nav-left a, .footer-nav-right a {
+    letter-spacing: -1px;
+  }
+
+  .copyright {
+    align-items: end;
+  }
+}
